@@ -15,6 +15,8 @@
 #ifndef CORE_CORE_H_
 #define CORE_CORE_H_
 
+#define WIN32_LEAN_AND_MEAN
+
 #include <memory>
 #include <string>
 #include <utility>

@@ -15,15 +15,17 @@
 #ifndef PLATFORM_IMPL_WINDOWS_WEBRTC_H_
 #define PLATFORM_IMPL_WINDOWS_WEBRTC_H_
 
+#ifndef NO_WEBRTC
+
 #include <string>
 
-#include "internal/account/account_manager.h"
+//#include "internal/account/account_manager.h"
 #include "internal/platform/implementation/webrtc.h"
 
 namespace nearby {
 namespace windows {
 
-class WebRtcSignalingMessenger : public api::WebRtcSignalingMessenger {
+class WebRtcSignalingMessenger : public nearby::api::WebRtcSignalingMessenger {
  public:
   using OnSignalingMessageCallback =
       api::WebRtcSignalingMessenger::OnSignalingMessageCallback;
@@ -73,5 +75,7 @@ class WebRtcMedium : public api::WebRtcMedium {
 
 }  // namespace windows
 }  // namespace nearby
+
+#endif  // NO_WEBRTC
 
 #endif  // PLATFORM_IMPL_WINDOWS_WEBRTC_H_

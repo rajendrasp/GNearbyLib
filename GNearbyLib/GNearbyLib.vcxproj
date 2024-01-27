@@ -112,7 +112,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NOMINMAX;NO_WEBRTC;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLOG_NO_ABBREVIATED_SEVERITIES;_CRT_SECURE_NO_WARNINGS;NOMINMAX;NO_WEBRTC;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
@@ -133,7 +133,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NOMINMAX;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLOG_NO_ABBREVIATED_SEVERITIES;_CRT_SECURE_NO_WARNINGS;NOMINMAX;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
@@ -170,6 +170,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="GNearbyLib.h" />
     <ClInclude Include="internal\crypto_cros\random.h" />
+    <ClInclude Include="internal\platform\implementation\platform.h" />
     <ClInclude Include="internal\platform\implementation\windows\log_message.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
@@ -185,6 +186,8 @@
     <ClCompile Include="GNearbyLib.cpp" />
     <ClCompile Include="internal\crypto_cros\random.cc" />
     <ClCompile Include="internal\platform\implementation\windows\log_message.cc" />
+    <ClCompile Include="internal\platform\implementation\windows\platform.cc" />
+    <ClCompile Include="internal\platform\implementation\windows\wifi_lan_medium.cc" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

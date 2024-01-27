@@ -242,7 +242,7 @@ bool InspectableReader::ReadBoolean(IInspectable inspectable) {
   return property_value.GetBoolean();
 }
 
-uint16 InspectableReader::ReadUint16(IInspectable inspectable) {
+uint16_t InspectableReader::ReadUint16(IInspectable inspectable) {
   if (inspectable == nullptr) {
     return 0;
   }
@@ -260,7 +260,7 @@ uint16 InspectableReader::ReadUint16(IInspectable inspectable) {
   return property_value.GetUInt16();
 }
 
-uint32 InspectableReader::ReadUint32(IInspectable inspectable) {
+uint32_t InspectableReader::ReadUint32(IInspectable inspectable) {
   if (inspectable == nullptr) {
     return 0;
   }

@@ -14,6 +14,8 @@
 
 #include "internal/platform/implementation/platform.h"
 
+#define WIN32_LEAN_AND_MEAN
+
 // clang-format off
 #include <windows.h>
 #include <winver.h>
@@ -301,10 +303,12 @@ ImplementationPlatform::CreateWifiDirectMedium() {
   return nullptr;
 }
 
+#ifndef NO_WEBRTC
 // TODO(b/261663238) replace with real implementation.
 std::unique_ptr<WebRtcMedium> ImplementationPlatform::CreateWebRtcMedium() {
   return nullptr;
 }
+#endif
 
 absl::StatusOr<WebResponse> ImplementationPlatform::SendRequest(
     const WebRequest& request) {

@@ -15,6 +15,7 @@
 #include "internal/platform/implementation/windows/wifi_lan.h"
 
 // Windows headers
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <winsock.h>
 
@@ -122,7 +123,7 @@ bool WifiLanMedium::StartAdvertising(const NsdServiceInfo& nsd_service_info) {
   dnssd_service_instance_ = DnssdServiceInstance{
       string_to_wstring(instance_name),
       nullptr,  // let windows use default computer's local name
-      (uint16)nsd_service_info.GetPort()};
+      (uint16_t)nsd_service_info.GetPort()};
 
   // Add TextRecords from NsdServiceInfo
   auto text_attributes = dnssd_service_instance_.TextAttributes();
@@ -499,7 +500,7 @@ ExceptionOr<NsdServiceInfo> WifiLanMedium::GetNsdServiceInformation(
   auto text_attributes = InspectableReader::ReadStringArray(inspectable);
   for (auto text_attribute : text_attributes) {
     // text attribute in format key=value
-    int pos = text_attribute.find("=");
+    size_t pos = text_attribute.find("=");
     if (pos <= 0 || pos == text_attribute.size() - 1) {
       NEARBY_LOGS(WARNING) << "found invalid text attribute " << text_attribute;
       continue;
