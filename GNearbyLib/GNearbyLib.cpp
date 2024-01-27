@@ -2,7 +2,7 @@
 //
 
 #include "pch.h"
-#include "framework.h"
+#include "GNearbyLib.h"
 #include <iostream>
 
 // TODO: This is an example of a library function
