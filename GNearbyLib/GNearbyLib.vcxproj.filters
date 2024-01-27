@@ -9,6 +9,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="internal">
+      <UniqueIdentifier>{a62b7a65-0f4b-4dc0-95f8-d23e781607da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="internal\platform">
+      <UniqueIdentifier>{75839509-310f-48c0-9e52-eeafef0b8e46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="internal\platform\implementation">
+      <UniqueIdentifier>{c456b7ae-5723-4d27-bb59-e8aa0d4db3be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="internal\platform\implementation\windows">
+      <UniqueIdentifier>{66014275-b7e1-4b01-95fc-3f8d2e454972}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -21,6 +33,25 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="GNearbyLib.h" />
+    <ClInclude Include="connections\strategy.h" />
+    <ClInclude Include="connections\advertising_options.h" />
+    <ClInclude Include="connections\connection_options.h" />
+    <ClInclude Include="connections\core.h" />
+    <ClInclude Include="connections\discovery_options.h" />
+    <ClInclude Include="connections\listeners.h" />
+    <ClInclude Include="connections\medium_selector.h" />
+    <ClInclude Include="connections\options_base.h" />
+    <ClInclude Include="connections\out_of_band_connection_metadata.h" />
+    <ClInclude Include="connections\params.h" />
+    <ClInclude Include="connections\payload.h" />
+    <ClInclude Include="connections\payload_type.h" />
+    <ClInclude Include="connections\power_level.h" />
+    <ClInclude Include="connections\status.h" />
+    <ClInclude Include="absl\synchronization\mutex.h" />
+    <ClInclude Include="internal\crypto_cros\random.h" />
+    <ClInclude Include="internal\platform\implementation\windows\log_message.h">
+      <Filter>internal\platform\implementation\windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GNearbyLib.cpp">
@@ -31,6 +62,33 @@
     </ClCompile>
     <ClCompile Include="core.cc">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="connections\strategy.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="connections\advertising_options.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="connections\connection_options.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="connections\discovery_options.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="connections\payload.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="connections\status.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="absl\synchronization\mutex.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="internal\crypto_cros\random.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="internal\platform\implementation\windows\log_message.cc">
+      <Filter>internal\platform\implementation\windows</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

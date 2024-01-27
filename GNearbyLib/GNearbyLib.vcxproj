@@ -112,12 +112,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NO_WEBRTC;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NOMINMAX;NO_WEBRTC;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
       <SubSystem>
@@ -131,12 +133,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NOMINMAX;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>C:\D\Work\SimpleGNearby\GNearbyLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
       <SubSystem>
@@ -147,14 +151,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="absl\synchronization\mutex.h" />
+    <ClInclude Include="connections\advertising_options.h" />
+    <ClInclude Include="connections\connection_options.h" />
+    <ClInclude Include="connections\core.h" />
+    <ClInclude Include="connections\discovery_options.h" />
+    <ClInclude Include="connections\listeners.h" />
+    <ClInclude Include="connections\medium_selector.h" />
+    <ClInclude Include="connections\options_base.h" />
+    <ClInclude Include="connections\out_of_band_connection_metadata.h" />
+    <ClInclude Include="connections\params.h" />
+    <ClInclude Include="connections\payload.h" />
+    <ClInclude Include="connections\payload_type.h" />
+    <ClInclude Include="connections\power_level.h" />
+    <ClInclude Include="connections\status.h" />
+    <ClInclude Include="connections\strategy.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GNearbyLib.h" />
+    <ClInclude Include="internal\crypto_cros\random.h" />
+    <ClInclude Include="internal\platform\implementation\windows\log_message.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="absl\synchronization\mutex.cc" />
+    <ClCompile Include="connections\advertising_options.cc" />
+    <ClCompile Include="connections\connection_options.cc" />
+    <ClCompile Include="connections\discovery_options.cc" />
+    <ClCompile Include="connections\payload.cc" />
+    <ClCompile Include="connections\status.cc" />
+    <ClCompile Include="connections\strategy.cc" />
     <ClCompile Include="core.cc" />
     <ClCompile Include="GNearbyLib.cpp" />
+    <ClCompile Include="internal\crypto_cros\random.cc" />
+    <ClCompile Include="internal\platform\implementation\windows\log_message.cc" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
